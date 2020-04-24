@@ -31,7 +31,7 @@ create table Vendor (
     constraint vcode unique (Code)
 );
 
-/* Commenting out  Requirements and LineItem for testing initial tables
+-- Commenting out  Requirements and LineItem for testing initial tables
 -- Request requirements
 create table Request (
 	ID					int				primary key auto_increment,
@@ -46,7 +46,7 @@ create table Request (
     ReasonForRejection	varchar(100),
     foreign key (UserID) references User(ID)
 );
-*/
+
 
 -- Product informantion
 create table Product (
@@ -61,7 +61,7 @@ create table Product (
     constraint vendor_part unique (VendorID, PartNumber)
 );
 
-/*
+
 -- LineItem specifications
 create table LineItem (
 	ID					int				primary key auto_increment,
@@ -72,7 +72,7 @@ create table LineItem (
     foreign key (ProductID) references Product(ID),
     constraint req_pdt unique (RequestID, ProductID)
 );
-*/
+
 -- insert User information
 insert into User (ID, UserName, Password, FirstName, LastName, PhoneNumber, Email, IsReviewer, IsAdmin)
 	values ('1', 'jakepino', 'Train@MAX1', 'Jacob', 'Pineault', '513-291-6276', 'jakewilliam3@gmail.com', 1, 1);
